@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Html Component 1`] = `
+<View
+  style={
+    Array [
+      Object {},
+      undefined,
+      undefined,
+    ]
+  }
+  testID="html"
+>
+  <View
+    style={
+      Array [
+        Object {
+          "marginTop": 0,
+          "paddingTop": 0,
+        },
+        undefined,
+        undefined,
+      ]
+    }
+    testID="body"
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "marginBottom": 0,
+            "marginLeft": 0,
+            "marginRight": 0,
+            "marginTop": 0,
+            "paddingBottom": 0,
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+          },
+          undefined,
+          undefined,
+        ]
+      }
+      testID="p"
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {
+              "color": "#fff",
+              "fontSize": 14,
+            },
+            undefined,
+            undefined,
+          ]
+        }
+      >
+        undefined
+      </Text>
+    </View>
+  </View>
+</View>
+`;

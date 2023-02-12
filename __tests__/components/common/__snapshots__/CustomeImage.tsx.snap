@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Custome Image 1`] = `
+<Image
+  onError={[Function]}
+  source={
+    Object {
+      "testUri": "../../../src/assets/logo.png",
+    }
+  }
+  style={
+    Array [
+      Object {
+        "minHeight": 30,
+        "minWidth": 30,
+      },
+      undefined,
+    ]
+  }
+  testID="image"
+/>
+`;

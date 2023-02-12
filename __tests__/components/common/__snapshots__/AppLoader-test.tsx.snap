@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App loader component 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "flex": 1,
+        "justifyContent": "center",
+      },
+      undefined,
+    ]
+  }
+>
+  <ActivityIndicator
+    animating={true}
+    color="rgba(103, 80, 164, 1)"
+    size="large"
+  />
+</View>
+`;
+
+exports[`App loader component 2`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "flex": 1,
+        "justifyContent": "center",
+      },
+      undefined,
+    ]
+  }
+>
+  <ActivityIndicator
+    animating={true}
+    color="rgba(103, 80, 164, 1)"
+    size="large"
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "color": undefined,
+        },
+        undefined,
+      ]
+    }
+  >
+    Hello
+  </Text>
+</View>
+`;
