@@ -42,7 +42,7 @@ const Products = ({navigation, route}: ReactNavigationProps) => {
         per_page,
         page: 1,
       }).then(({data}) => {
-        // console.log({result});
+        console.log({data});
         if (!data.message) {
           setErrorMsg(null);
           setProducts(data);
@@ -89,30 +89,8 @@ const Products = ({navigation, route}: ReactNavigationProps) => {
         showLogo={false}
         header={t('products')}
         onPressCart={() => navigation.navigate('ProductDetails')}
-        // customeLeftIcon={
-        //   <CustomeButton
-        //     onPress={() => {
-        //       dispatch(logOutAction());
-        //       navigation.replace('Login');
-        //     }}
-        //     style={[styles.logout, {backgroundColor: colors.background}]}
-        //     text={t('logout')}
-        //     textStyle={styles.logOutText}
-        //     icon={
-        //       <CustomeIcon
-        //         size={20}
-        //         name="log-out"
-        //         style={{transform: [{rotateY: '180deg'}]}}
-        //       />
-        //     }
-        //   />
-        // }
         {...{searchValue, setSearchValue}}
       />
-      {/* {errorMsg ? (
-        <Error text={errorMsg} />
-      ) :  */}
-      {/* ( */}
       <FlatList
         // eslint-disable-next-line react-native/no-inline-styles
         contentContainerStyle={{flex: errorMsg ? 1 : 0}}

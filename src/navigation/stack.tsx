@@ -15,9 +15,11 @@ export const MainStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{headerShown: false}}
-      initialRouteName={logedUser ? 'BottomTabs' : 'Login'}>
-      {/* <Stack.Screen name="BottomTabs" component={BottomTabs} /> */}
-      {/* <Stack.Screen name="Login" component={Login} /> */}
+      // initialRouteName={'ProductDetails'}
+      >
+      {/* initialRouteName={logedUser ? 'BottomTabs' : 'Login'}> */}
+      <Stack.Screen name="BottomTabs" component={BottomTabs} />
+      <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="ProductDetails" component={ProductDetails} />
     </Stack.Navigator>
   );

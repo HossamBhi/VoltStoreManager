@@ -643,3 +643,15 @@ const uplaodedImage = {
 };
 
 export type uplaodedImageProps = typeof uplaodedImage;
+
+const attributeData = [
+  {
+    id: 1,
+    name: 'الوزن',
+    slug: 'pa_weight',
+    type: 'select',
+    order_by: 'menu_order',
+    has_archives: false,
+  },
+];
+export type attributeProps = (typeof attributeData)[0];

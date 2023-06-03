@@ -44,6 +44,7 @@ export default {
     "confirmProductDeleteMessage": "Are you sure to delete product?",
     "deleteConfirm": "Delete",
     "cancelConfirm": "Cancel",
+    "selectCategory": "Select Category",
     // Orders
     "orders": "Orders",
     "total": "Total",

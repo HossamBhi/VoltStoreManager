@@ -8,6 +8,8 @@ import CustomeTitle from '../common/CustomeTitle';
 import PriceSection from './PriceSection';
 import {t} from 'i18next';
 import RenderHtmlComponent from '../common/RenderHtmlComponent';
+import CustomeText from '../common/CustomeText';
+import RowComponent from '../common/RowComponent';
 
 interface ProductCardProps {
   style?: ViewStyle;
@@ -17,6 +19,9 @@ interface ProductCardProps {
 
 const ProductCard = ({item, style, onPress}: ProductCardProps) => {
   const {colors} = useTheme();
+  if (item?.status === 'trash') {
+    return null;
+  }
   return (
     <CustomeButton
       onPress={onPress}
@@ -36,12 +41,32 @@ const ProductCard = ({item, style, onPress}: ProductCardProps) => {
             html={item?.description}
             textColor={colors.onSurfaceVariant}
           />
-          <PriceSection
-            currency={t('LE')}
-            currentPrice={item?.price}
-            oldPrice={item?.regular_price}
-            style={styles.priceSection}
-            priceConStyle={styles.priceCon}
+          <RowComponent
+            style={styles.tagCon}
+            leftPart={
+              <PriceSection
+                currency={t('LE')}
+                currentPrice={item?.price}
+                oldPrice={item?.regular_price}
+                style={styles.priceSection}
+                priceConStyle={styles.priceCon}
+              />
+            }
+            rightPart={
+              <CustomeText
+                text={item?.status}
+                style={[
+                  styles.tag,
+                  {
+                    backgroundColor:
+                      item?.status === 'publish' ||
+                      item?.status === 'driver-assigned'
+                        ? colors.tertiary
+                        : colors.primary,
+                  },
+                ]}
+              />
+            }
           />
         </View>
       </>
@@ -81,7 +106,20 @@ const styles = StyleSheet.create({
   },
   detailsSection: {paddingBottom: 8, paddingHorizontal: 14},
   des: {fontSize: 12, lineHeight: 15, fontWeight: '400', flex: 1},
-  priceSection: {borderTopWidth: 0, paddingHorizontal: 0, paddingTop: 20},
+  priceSection: {borderTopWidth: 0, paddingHorizontal: 0},
   priceCon: {justifyContent: 'space-between', flex: 1, flexDirection: 'row'},
+  tagCon: {
+    alignItems: 'center',
+  },
+  tag: {
+    fontSize: 12,
+    fontWeight: '700',
+    paddingHorizontal: 12,
+    paddingVertical: 4,
+    borderRadius: 2,
+    textTransform: 'uppercase',
+    color: '#fff',
+    marginStart: 16,
+  },
 });
 export default ProductCard;

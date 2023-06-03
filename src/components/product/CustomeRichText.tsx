@@ -23,7 +23,10 @@ const CustomeRichText = ({
         initialContentHTML={value}
         androidLayerType="software"
         androidHardwareAccelerationDisabled={true}
-        editorStyle={{backgroundColor: colors.surfaceVariant}}
+        editorStyle={{
+          backgroundColor: colors.surfaceVariant,
+          color: colors.text,
+        }}
         ref={richText}
         onChange={onChangeText}
         placeholder={title + ''}
@@ -52,11 +55,7 @@ const CustomeRichText = ({
   );
 };
 const styles = StyleSheet.create({
-  title: {
-    paddingTop: 20,
-    paddingBottom: 4,
-    lineHeight: 11,
-  },
+  title: {paddingTop: 20, paddingBottom: 4, lineHeight: 11},
   container: {
     borderTopRightRadius: 10,
     borderTopLeftRadius: 10,

@@ -210,7 +210,7 @@ exports[`Render Login Screen 1`] = `
                         undefined,
                       ]
                     }
-                    value="badrgreenmarket@gmail.com"
+                    value=""
                   />
                 </View>
               </View>
@@ -309,7 +309,7 @@ exports[`Render Login Screen 1`] = `
                     onChangeText={[Function]}
                     placeholder="undefined"
                     placeholderTextColor="rgba(73, 69, 79, 1)"
-                    secureTextEntry={true}
+                    secureTextEntry={false}
                     style={
                       Array [
                         Object {
@@ -323,7 +323,7 @@ exports[`Render Login Screen 1`] = `
                         undefined,
                       ]
                     }
-                    value="badr@greenmarket2"
+                    value=""
                   />
                 </View>
               </View>

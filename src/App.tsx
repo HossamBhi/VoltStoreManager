@@ -37,8 +37,6 @@ const AppContainer = () => {
   const {activeTheme} = useSelector((state: RootState) => state.appSettings);
 
   const scheme = useColorScheme();
-  // const isDark = scheme === 'dark' ? true : false;
-  // const theme = isDark ? DarkTheme : DefaultTheme;
   const isDark =
     activeTheme.value === 1
       ? scheme === 'dark'

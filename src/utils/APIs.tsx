@@ -117,13 +117,24 @@ export const getCategoriesAPI = async ({username, password}: userProps) =>
     .then(res => res.data)
     .catch(onCatchError);
 
-// export const getOrderDetailsAPI = async ({username, password}: userProps) =>
-//   await axios
-//     .get(`${host}/wp-json/wcfmmp/v1/products/?status=all&page=1&per_page=100`, {
-//       auth: {username, password},
-//     })
-//     .then(res => res.data)
-//     .catch(onCatchError);
+export const getAttributesAPI = async ({username, password}: userProps) =>
+  await axios
+    .get(`${host}/wp-json/wc/v3/products/attributes/`, {
+      auth: {username, password},
+    })
+    .then(res => res.data)
+    .catch(onCatchError);
+export const getAttributeTermsAPI = async ({
+  username,
+  password,
+  id,
+}: userProps & {id: number}) =>
+  await axios
+    .get(`${host}/wp-json/wc/v3/products/attributes/${id}/terms`, {
+      auth: {username, password},
+    })
+    .then(res => res.data)
+    .catch(onCatchError);
 
 const onCatchError = (error: Error | AxiosError) => {
   if (axios.isAxiosError(error)) {

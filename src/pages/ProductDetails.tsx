@@ -39,6 +39,7 @@ import Icon from '../components/pageHeader/Icon';
 import ConfirmationModal from '../components/popup/ConfirmationModal';
 import Categories from '../components/product/Categories';
 import CustomeRichText from '../components/product/CustomeRichText';
+import AttributesSection from '../components/product/AttributesSection';
 
 interface ProductFields {
   name: string;
@@ -87,9 +88,6 @@ const ProductDetails = ({route, navigation}: ProductDetailsScreenProps) => {
   const [inStock, setInStock] = useState(STOCK_TYPE[0]);
   const [showConfim, setShowConfirm] = useState(false);
   const [openCollapse, setOpenCollapse] = useState(0);
-  // const [showCat, setShowCat] = useState(false);
-  // const [categories, setCategories] = useState<categroyProps[]>([]);
-  // console.log(product.categories);
   const [selectedCat, setSelectedCat] = useState<smallCatProp[]>(
     product.categories,
   );
@@ -113,15 +111,12 @@ const ProductDetails = ({route, navigation}: ProductDetailsScreenProps) => {
 
   const onHandlePickImage = async () => {
     const img = await pickImageLibrary();
-    // console.log({img});
     if (logedUser && img) {
       const result = await uploadImageApi({...logedUser, file: img});
-      // console.log({result});
       if (result) {
         setImages([...images, result]);
       }
     }
-    // setImage(img);
   };
 
   const onSavePress = (vals: ProductFields) => {
@@ -182,7 +177,7 @@ const ProductDetails = ({route, navigation}: ProductDetailsScreenProps) => {
   if (loader === true) {
     return <AppLoader />;
   }
-  // console.log({selectedCat});
+
   return (
     <View style={styles.container}>
       <ScrollView style={styles.scroll}>
@@ -263,6 +258,15 @@ const ProductDetails = ({route, navigation}: ProductDetailsScreenProps) => {
                 <PickImage
                   onAddImage={onHandlePickImage}
                   {...{images, setImages}}
+                />
+                <Collapse
+                  setIsOpen={id => {
+                    setOpenCollapse(openCollapse === 4 ? 0 : id);
+                  }}
+                  id={4}
+                  isOpen={openCollapse === 4}
+                  title={t('attributes')}
+                  body={<AttributesSection />}
                 />
                 <Collapse
                   setIsOpen={id => {

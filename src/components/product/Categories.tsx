@@ -46,7 +46,11 @@ const Categories = ({
       overlayStyle={styles.overlay}
       isTopBar
       placeholderOnpress={() => setVisible(true)}
-      placeholder={`${selectedCat.map(s => s.name)}`}
+      placeholder={`${
+        selectedCat.length > 0
+          ? selectedCat.map(s => s.name)
+          : t('selectCategory')
+      }`}
       renderTopBar={() => (
         <PageHeader
           style={{backgroundColor: colors.primary}}
